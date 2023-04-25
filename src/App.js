@@ -40,7 +40,7 @@ export default function App() {
   };
 
   const resetScore = () => {
-    setScores({ xScore: 0, yScore: 0 });
+    setScores({ xScore: 0, oScore: 0 });
   };
 
   const handleBoxClick = (index) => {
@@ -51,7 +51,6 @@ export default function App() {
         return value;
       }
     });
-
 
     const winner = checkWinner(updatedBoard);
     console.log(winner ?? winner);
@@ -127,9 +126,20 @@ export default function App() {
         board={board}
         onClick={gameOver ? resetBoard : handleBoxClick}
       />
-
+      {/* <div>
+        <span>
       <ResetButton onClick={resetBoard} />
       <ResetScoreButton onClick={resetScore} />
+      </span>
+      </div> */}
+      <div className="button-container">
+        <div className="column">
+          <ResetButton onClick={resetBoard} />
+        </div>
+        <div className="column">
+          <ResetScoreButton onClick={resetScore} />
+        </div>
+      </div>
     </div>
   );
 }

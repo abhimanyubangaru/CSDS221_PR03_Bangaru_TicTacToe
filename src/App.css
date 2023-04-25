@@ -6,3 +6,12 @@ body {
   margin: 0;
   background-color: #efefef;
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 50%;
+}
