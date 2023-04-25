@@ -68,11 +68,11 @@ export default function App() {
         // setDidXWin(true);
         setWhoWon('X');
       } else {
-        let { xScore } = scores;
-        xScore += 1;
-        let { oScore } = scores;
-        oScore += 1;
-        setScores({ xScore, oScore });
+        // let { xScore } = scores;
+        // xScore += 1;
+        // let { oScore } = scores;
+        // oScore += 1;
+        // setScores({ xScore, oScore });
         setWhoWon('TIE');
       }
       setGameOver(true);
@@ -93,7 +93,7 @@ export default function App() {
       const [x, y, z] = WIN_CONDITIONS[i];
       if (board[x] && board[x] === board[y] && board[y] === board[z]) {
         const winningNumbers = [x, y, z];
-        setWinningIndices(winningNumbers);
+        setWinningIndices(winningNumbers); // set the winning indices here
         setGameOver(true);
         return board[x];
       }
@@ -119,6 +119,7 @@ export default function App() {
           info={openInfoDialog}
           winner={whoWon}
           gameOver={gameOver}
+          importantIndices={winningIndices}
         />
       </DiaWrap>
       <ScoreBoard scores={scores} userX={userX} />

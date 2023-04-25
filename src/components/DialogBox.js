@@ -5,7 +5,25 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import './DialogBox.css';
 
-export const DialogBox = ({ CloseInfoDialog, info, winner, gameOver }) => {
+export const DialogBox = ({
+  CloseInfoDialog,
+  info,
+  winner,
+  gameOver,
+  importantIndices,
+}) => {
+  const winIndexDescriptions = [
+    'top left',
+    'top middle',
+    'top right',
+    'middle left',
+    'center',
+    'middle right',
+    'bottom left',
+    'bottom middle',
+    'bottom right',
+  ];
+
   return (
     <>
       <DialogTitle className="dialogTitle">
@@ -31,12 +49,22 @@ export const DialogBox = ({ CloseInfoDialog, info, winner, gameOver }) => {
         ) : winner === 'TIE' ? (
           <div>
             <h1> IT IS A TIE!</h1>
+            No points for anyone!
             <br />
             Click the close button or tap out of this dialog to play again.
           </div>
         ) : (
           <div>
             <h1>And the winner is... {winner}! </h1>
+            The following is the spots where {winner} had the winning tiles:
+            <br />
+            {importantIndices.map((index, num) => {
+              return (
+                <span>
+                  {num + 1}. {winIndexDescriptions[index]} <br />
+                </span>
+              );
+            })}
             <br />
             Click the close button or tap out of this dialog to play again.
           </div>
