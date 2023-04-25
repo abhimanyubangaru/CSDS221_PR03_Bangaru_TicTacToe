@@ -114,6 +114,7 @@ export default function App() {
   };
   return (
     <div className="app">
+      <h1>Tic Tac Toe</h1>
       <DiaWrap open={openDialog} onClose={resetBoard}>
         <DialogBox
           CloseInfoDialog={handleClose}
