@@ -88,14 +88,11 @@ export default function App() {
   const checkWinner = (board) => {
     const newNumPicked = numPicked + 1;
     setNumPicked(newNumPicked);
-    console.log(numPicked);
     for (let i = 0; i < WIN_CONDITIONS.length; i++) {
       const [x, y, z] = WIN_CONDITIONS[i];
       if (board[x] && board[x] === board[y] && board[y] === board[z]) {
         const winningNumbers = [x, y, z];
         setWinningIndices(winningNumbers);
-        console.log([x, y, z]);
-        console.log(JSON.stringify(winningIndices));
         setGameOver(true);
         return board[x];
       }
