@@ -9,6 +9,7 @@ import { ResetButton } from './components/ResetButton.js';
 import { ResetScoreButton } from './components/ResetScoreButton.js';
 import { DialogBox } from './components/DialogBox.js';
 import './style.css';
+import './App.css';
 
 export default function App() {
   const WIN_CONDITIONS = [
@@ -36,7 +37,6 @@ export default function App() {
   const handleClose = () => {
     setOpenDialog(false);
     resetBoard();
-    setOpenInfoDialog(false);
   };
 
   const resetScore = () => {
@@ -76,6 +76,7 @@ export default function App() {
         setWhoWon('TIE');
       }
       setGameOver(true);
+      setOpenInfoDialog(false);
       setOpenDialog(true);
     }
 

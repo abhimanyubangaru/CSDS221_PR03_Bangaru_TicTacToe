@@ -9,9 +9,6 @@ body {
 
 .button-container {
   display: flex;
-  justify-content: space-between;
-}
-
-.column {
-  width: 50%;
+  justify-content: center;
+  align-items: center;
 }
