@@ -5,11 +5,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import './DialogBox.css';
 
-export const DialogBox = ({ CloseInfoDialog, info, winner }) => {
+export const DialogBox = ({ CloseInfoDialog, info, winner, gameOver }) => {
   return (
     <>
       <DialogTitle className="dialogTitle">
-        {info ? 'Hello!' : 'Game Over!'}
+        {info ? 'Hello!' : gameOver ?? 'Game Over!'}
       </DialogTitle>
       <DialogContent className="dialogContent">
         {info ? (
@@ -17,7 +17,7 @@ export const DialogBox = ({ CloseInfoDialog, info, winner }) => {
             <div>I hope you're doing well.</div>
             <div>Welcome to Tic Tac Toe!</div>
           </>
-        ) : winner === 'TIE' ? (
+        ) : winner === 'TIE' && gameOver ? (
           <div>IT IS A TIE!</div>
         ) : (
           <div>And the winner is... {winner}!</div>

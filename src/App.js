@@ -35,8 +35,8 @@ export default function App() {
 
   const handleClose = () => {
     setOpenDialog(false);
-    setOpenInfoDialog(false);
     resetBoard();
+    setOpenInfoDialog(false);
   };
 
   const resetScore = () => {
@@ -75,6 +75,7 @@ export default function App() {
         setScores({ xScore, oScore });
         setWhoWon('TIE');
       }
+      setGameOver(true);
       setOpenDialog(true);
     }
 
@@ -118,6 +119,7 @@ export default function App() {
           CloseInfoDialog={handleClose}
           info={openInfoDialog}
           winner={whoWon}
+          gameOver={gameOver}
         />
       </DiaWrap>
       <ScoreBoard scores={scores} userX={userX} />
