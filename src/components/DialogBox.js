@@ -17,10 +17,10 @@ export const DialogBox = ({ CloseInfoDialog, info, winner, gameOver }) => {
             <div>I hope you're doing well.</div>
             <div>Welcome to Tic Tac Toe!</div>
           </>
-        ) : winner === 'TIE' && gameOver ? (
-          <div>IT IS A TIE!</div>
+        ) : winner === 'TIE' ? (
+           <div>IT IS A TIE!</div>
         ) : (
-          <div>And the winner is... {winner}!</div>
+           <div>And the winner is... {winner}!</div>
         )}
       </DialogContent>
       <DialogActions className="dialogActions">
